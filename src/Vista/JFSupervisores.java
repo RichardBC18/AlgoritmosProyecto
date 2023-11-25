@@ -4,6 +4,13 @@
  */
 package Vista;
 
+import Controlator.Algoritmos.Hash;
+import Modelo.Supervisores;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Stack;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edu
@@ -13,8 +20,10 @@ public class JFSupervisores extends javax.swing.JFrame {
     /**
      * Creates new form Supervisores
      */
+
     public JFSupervisores() {
         initComponents();
+        
     }
 
     /**
@@ -27,12 +36,12 @@ public class JFSupervisores extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txtNombreSup = new javax.swing.JTextField();
+        cbxAreaSup = new javax.swing.JComboBox<>();
+        txtDNISup = new javax.swing.JTextField();
+        txtApellidoSup = new javax.swing.JTextField();
+        txtCelularSup = new javax.swing.JTextField();
+        cbxSexoSup = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -45,6 +54,8 @@ public class JFSupervisores extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txaHashSupervisor = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,39 +64,39 @@ public class JFSupervisores extends javax.swing.JFrame {
         jLabel1.setText("SUPERVISOR");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 146, 60));
+        txtNombreSup.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(txtNombreSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 146, 60));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Area Responsable", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, 146, 60));
+        cbxAreaSup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
+        cbxAreaSup.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Area Responsable", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(cbxAreaSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 146, 60));
 
-        jTextField2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 146, 60));
+        txtDNISup.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(txtDNISup, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 146, 60));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 146, 60));
+        txtApellidoSup.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(txtApellidoSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 146, 60));
 
-        jTextField5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Celular", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 146, 60));
+        txtCelularSup.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Celular", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(txtCelularSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 146, 60));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sexo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 146, 60));
+        cbxSexoSup.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
+        cbxSexoSup.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sexo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(cbxSexoSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 146, 60));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Listas enlazadas");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
         jButton2.setText("MergeSort");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, -1));
 
         jButton5.setText("ShellSort");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 240, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 90, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Hash");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 230, -1, -1));
 
         txtBuscarHash.setText("Buscar");
         txtBuscarHash.addActionListener(new java.awt.event.ActionListener() {
@@ -93,14 +104,19 @@ public class JFSupervisores extends javax.swing.JFrame {
                 txtBuscarHashActionPerformed(evt);
             }
         });
-        getContentPane().add(txtBuscarHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 270, -1, -1));
+        getContentPane().add(txtBuscarHash, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 290, 110, -1));
 
         jButton8.setText("Asignar Hash");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, -1, -1));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(334, 260, 110, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Ordenamientos");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 230, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -115,7 +131,7 @@ public class JFSupervisores extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 720, 250));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 720, 120));
 
         jButton6.setText("Eliminar ultimo elemento");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +139,7 @@ public class JFSupervisores extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
         jButton10.setText("Eliminar");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +147,7 @@ public class JFSupervisores extends javax.swing.JFrame {
                 jButton10ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
 
         jButton11.setText("Añadir");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +155,14 @@ public class JFSupervisores extends javax.swing.JFrame {
                 jButton11ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, -1, -1));
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
+
+        txaHashSupervisor.setEditable(false);
+        txaHashSupervisor.setColumns(20);
+        txaHashSupervisor.setRows(5);
+        jScrollPane2.setViewportView(txaHashSupervisor);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 720, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,6 +183,30 @@ public class JFSupervisores extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        String dni = txtDNISup.getText();
+        String nom = txtNombreSup.getText();
+        String ape = txtApellidoSup.getText();
+        String sexo = cbxSexoSup.getSelectedItem().toString();
+        int celular = Integer.parseInt(txtCelularSup.getText());
+        String area = cbxAreaSup.getSelectedItem().toString();
+        Supervisores sup = new Supervisores(area,dni,nom,ape,sexo,celular);
+        JOptionPane.showMessageDialog(this, "Se ha agregado exitosamente el/la supervisor@");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    public void funcionHash(String[] dni, String[] arreglo, int tamanio) {
+        for (int i = 0; i < dni.length; i++) {
+            String elemento = dni[i];
+            int indiceArreglo = Integer.parseInt(elemento) % (tamanio - 1);
+            System.out.println("El indice es " + indiceArreglo + " para el elemento " + elemento);
+            while (arreglo[indiceArreglo] != "-1"){
+                indiceArreglo++;
+                System.out.println("Ocurrio una colision en el indice " + (indiceArreglo - 1) + ". Cambiar al indice " + indiceArreglo);
+                indiceArreglo%=tamanio;
+            }
+            arreglo[indiceArreglo] = elemento;
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -197,24 +244,26 @@ public class JFSupervisores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cbxAreaSup;
+    private javax.swing.JComboBox<String> cbxSexoSup;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton8;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextArea txaHashSupervisor;
+    private javax.swing.JTextField txtApellidoSup;
     private javax.swing.JButton txtBuscarHash;
+    private javax.swing.JTextField txtCelularSup;
+    private javax.swing.JTextField txtDNISup;
+    private javax.swing.JTextField txtNombreSup;
     // End of variables declaration//GEN-END:variables
 }

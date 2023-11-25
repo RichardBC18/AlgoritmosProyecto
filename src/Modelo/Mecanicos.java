@@ -11,7 +11,7 @@ package Modelo;
 public class Mecanicos extends Persona {
     String especialidad;
 
-    public Mecanicos(String especialidad, int dni, String nombres, String apellidos, String sexo, int cel) {
+    public Mecanicos(String especialidad, String dni, String nombres, String apellidos, String sexo, int cel) {
         super(dni, nombres, apellidos, sexo, cel);
         this.especialidad = especialidad;
     }
@@ -24,11 +24,11 @@ public class Mecanicos extends Persona {
         this.especialidad = especialidad;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

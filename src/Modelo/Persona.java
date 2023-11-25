@@ -9,13 +9,13 @@ package Modelo;
  * @author Edu
  */
 public abstract class Persona {
-    int dni;
+    String dni;
     String nombres;
     String apellidos;
     String sexo;
     int cel;
 
-    public Persona(int dni, String nombres, String apellidos, String sexo, int cel) {
+    public Persona(String dni, String nombres, String apellidos, String sexo, int cel) {
         this.dni = dni;
         this.nombres = nombres;
         this.apellidos = apellidos;
@@ -23,11 +23,11 @@ public abstract class Persona {
         this.cel = cel;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

@@ -2,15 +2,15 @@ package Modelo;
 
 public class Conductores extends Persona{
     
-    public Conductores(int dni, String nombres, String apellidos, String sexo, int cel) {
+    public Conductores(String dni, String nombres, String apellidos, String sexo, int cel) {
         super(dni, nombres, apellidos, sexo, cel);
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

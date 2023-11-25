@@ -6,14 +6,12 @@ public class Taxis {
     String modeloTaxi;
     String zona;
     String tipoServicio;
-    Conductores actor;
 
-    public Taxis(String Placa, String ModeloTaxi, String Zona, String TipoServicio, Conductores actor) {
+    public Taxis(String Placa, String ModeloTaxi, String Zona, String TipoServicio) {
         this.placa = Placa;
         this.modeloTaxi = ModeloTaxi;
         this.zona = Zona;
         this.tipoServicio = TipoServicio;
-        this.actor = actor;
     }
 
     public String getPlaca() {
@@ -48,12 +46,5 @@ public class Taxis {
         this.tipoServicio = tipoServicio;
     }
 
-    public Conductores getActor() {
-        return actor;
-    }
-
-    public void setActor(Conductores actor) {
-        this.actor = actor;
-    }
 
 }

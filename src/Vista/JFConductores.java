@@ -18,11 +18,7 @@ public class JFConductores extends javax.swing.JFrame {
     /**
      * Creates new form Conductores
      */
-    int dni;
-    String nombre;
-    String ape;
-    String sexo;
-    int cel;
+    
     Busqueda bus = new Busqueda();
     public JFConductores() {
         initComponents();
@@ -39,11 +35,11 @@ public class JFConductores extends javax.swing.JFrame {
 
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
-        txtDNI = new javax.swing.JTextField();
-        txtApellido = new javax.swing.JTextField();
-        txtCelular = new javax.swing.JTextField();
-        cbxSexo = new javax.swing.JComboBox<>();
+        txtNombreConductor = new javax.swing.JTextField();
+        txtDNIConductor = new javax.swing.JTextField();
+        txtApellidoConductor = new javax.swing.JTextField();
+        txtCelularConductor = new javax.swing.JTextField();
+        cbxSexoConductor = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -67,31 +63,31 @@ public class JFConductores extends javax.swing.JFrame {
         jLabel1.setText("CONDUCTOR");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
 
-        txtNombre.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreConductor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Nombre", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        txtNombreConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
+                txtNombreConductorActionPerformed(evt);
             }
         });
-        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 146, 60));
+        getContentPane().add(txtNombreConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 146, 60));
 
-        txtDNI.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(txtDNI, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 146, 60));
+        txtDNIConductor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "DNI", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(txtDNIConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 146, 60));
 
-        txtApellido.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        txtApellido.addActionListener(new java.awt.event.ActionListener() {
+        txtApellidoConductor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Apellido", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        txtApellidoConductor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtApellidoActionPerformed(evt);
+                txtApellidoConductorActionPerformed(evt);
             }
         });
-        getContentPane().add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 146, 60));
+        getContentPane().add(txtApellidoConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 146, 60));
 
-        txtCelular.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Celular", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(txtCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 146, 60));
+        txtCelularConductor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Celular", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(txtCelularConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 146, 60));
 
-        cbxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
-        cbxSexo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sexo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
-        getContentPane().add(cbxSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 146, 60));
+        cbxSexoConductor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "M", "F" }));
+        cbxSexoConductor.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sexo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+        getContentPane().add(cbxSexoConductor, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 146, 60));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Pila");
@@ -177,22 +173,17 @@ public class JFConductores extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        dni = Integer.parseInt(txtDNI.getText());
-        nombre = txtNombre.getText();
-        ape = txtApellido.getText();
-        sexo = cbxSexo.getSelectedItem().toString();
-        cel = Integer.parseInt(txtCelular.getText());
-        Conductores c = new Conductores(dni,nombre,ape,sexo,cel);
+        //Conductores c = new Conductores(txtDniConductor,txtNombreCOnductor);
         
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
+    private void txtApellidoConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoConductorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoActionPerformed
+    }//GEN-LAST:event_txtApellidoConductorActionPerformed
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+    private void txtNombreConductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreConductorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
+    }//GEN-LAST:event_txtNombreConductorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,7 +222,7 @@ public class JFConductores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbxSexo;
+    private javax.swing.JComboBox<String> cbxSexoConductor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -246,9 +237,9 @@ public class JFConductores extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtApellido;
-    private javax.swing.JTextField txtCelular;
-    private javax.swing.JTextField txtDNI;
-    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtApellidoConductor;
+    private javax.swing.JTextField txtCelularConductor;
+    private javax.swing.JTextField txtDNIConductor;
+    private javax.swing.JTextField txtNombreConductor;
     // End of variables declaration//GEN-END:variables
 }

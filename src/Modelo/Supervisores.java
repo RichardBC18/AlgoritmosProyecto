@@ -11,7 +11,7 @@ package Modelo;
 public class Supervisores extends Persona {
     String areaResponsable;
 
-    public Supervisores(String areaResponsable, int dni, String nombres, String apellidos, String sexo, int cel) {
+    public Supervisores(String areaResponsable, String dni, String nombres, String apellidos, String sexo, int cel) {
         super(dni, nombres, apellidos, sexo, cel);
         this.areaResponsable = areaResponsable;
     }
@@ -24,11 +24,11 @@ public class Supervisores extends Persona {
         this.areaResponsable = areaResponsable;
     }
 
-    public int getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
