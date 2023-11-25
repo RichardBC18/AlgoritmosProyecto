@@ -36,13 +36,23 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("Buses");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(363, 196, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 170, 60));
 
         jButton2.setText("Conductores");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(99, 196, -1, -1));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, 170, 60));
 
         jLabel1.setText("SELECCIONE UN AREA ESPECIFICA");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 70, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, -1, -1));
 
         jButton3.setText("Mecanicos");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -50,7 +60,7 @@ public class Menu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 170, 60));
 
         Supervisores.setText("Supervisores");
         Supervisores.addActionListener(new java.awt.event.ActionListener() {
@@ -58,18 +68,34 @@ public class Menu extends javax.swing.JFrame {
                 SupervisoresActionPerformed(evt);
             }
         });
-        getContentPane().add(Supervisores, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, -1, -1));
+        getContentPane().add(Supervisores, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 170, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        JFMecanicos mec = new JFMecanicos();
+        mec.setVisible(true);
+        mec.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void SupervisoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SupervisoresActionPerformed
-        // TODO add your handling code here:
+        JFSupervisores sup = new JFSupervisores();
+        sup.setVisible(true);
+        sup.setLocationRelativeTo(null);
     }//GEN-LAST:event_SupervisoresActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        JFConductores cond = new JFConductores();
+        cond.setVisible(true);
+        cond.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        MenuTaxi menT = new MenuTaxi();
+        menT.setVisible(true);
+        menT.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

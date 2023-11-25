@@ -7,7 +7,6 @@ package Controlator;
 import Vista.JFConductores;
 import Vista.Prime;
 
-
 /**
  *
  * @author Edu
@@ -20,5 +19,4 @@ public class Ejecucion {
         prime.setLocationRelativeTo(null);
         prime.setSize(400, 400);
     }
-
 }

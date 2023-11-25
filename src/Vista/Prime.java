@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Anvhu
@@ -13,7 +15,6 @@ public class Prime extends javax.swing.JFrame {
     /**
      * Creates new form Prime
      */
-    
     public Prime() {
         initComponents();
     }
@@ -27,18 +28,15 @@ public class Prime extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        pssContrasenia = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONTRASEÑA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 230, -1));
-
-        jTextField2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USUARIO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 230, -1));
+        txtUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "USUARIO", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 230, -1));
 
         jButton1.setText("INGRESAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -48,15 +46,34 @@ public class Prime extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
 
+        pssContrasenia.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CONTRASEÑA", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+        pssContrasenia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pssContraseniaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pssContrasenia, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 230, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Menu men = new Menu();
-        men.setVisible(true);
-        men.setLocationRelativeTo(null);
-        men.setSize(600,600);
+        String usuario = txtUsuario.getText();
+        String pass = pssContrasenia.getText();
+        if (usuario.equalsIgnoreCase("a") && pass.equalsIgnoreCase("a")) {
+            Menu men = new Menu();
+            men.setVisible(true);
+            men.setLocationRelativeTo(null);
+            men.setSize(600, 600);
+        } else {
+            JOptionPane.showConfirmDialog(null, "CREDENCIALES INCORRECTAS");
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void pssContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pssContraseniaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pssContraseniaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,7 +112,7 @@ public class Prime extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPasswordField pssContrasenia;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
