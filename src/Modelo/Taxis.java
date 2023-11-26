@@ -2,49 +2,50 @@ package Modelo;
 
 public class Taxis {
 
-    String placa;
-    String modeloTaxi;
-    String zona;
-    String tipoServicio;
+    String Placa;
+    String ModeloTaxi;
+    String Zona;
+    String TipoServicio;
+    String Chofer;
+    
+    Taxis hijoIzq, hijoDer;
 
-    public Taxis(String Placa, String ModeloTaxi, String Zona, String TipoServicio) {
-        this.placa = Placa;
-        this.modeloTaxi = ModeloTaxi;
-        this.zona = Zona;
-        this.tipoServicio = TipoServicio;
+    public Taxis(String placa, String modelo, String zona, String chofer, String servicio) {
+        this.Placa = placa;
+        this.ModeloTaxi = modelo;
+        this.Zona = zona;
+        this.Chofer = chofer;
+        this.TipoServicio= servicio;
+        
+        this.hijoDer=null;
+        this.hijoIzq=null;
     }
 
     public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
+        return Placa;
     }
 
     public String getModeloTaxi() {
-        return modeloTaxi;
-    }
-
-    public void setModeloTaxi(String modeloTaxi) {
-        this.modeloTaxi = modeloTaxi;
+        return ModeloTaxi;
     }
 
     public String getZona() {
-        return zona;
-    }
-
-    public void setZona(String zona) {
-        this.zona = zona;
+        return Zona;
     }
 
     public String getTipoServicio() {
-        return tipoServicio;
+        return TipoServicio;
     }
 
-    public void setTipoServicio(String tipoServicio) {
-        this.tipoServicio = tipoServicio;
+    public String getChofer() {
+        return Chofer;
     }
 
+    public Taxis getHijoIzq() {
+        return hijoIzq;
+    }
 
+    public Taxis getHijoDer() {
+        return hijoDer;
+    }
 }
